@@ -4,7 +4,7 @@ import { Config, Env } from '../decorators';
 export class LicenseConfig {
 	/** License server URL to retrieve license. */
 	@Env('N8N_LICENSE_SERVER_URL')
-	serverUrl: string = 'https://license.n8n.io/v1';
+	serverUrl: string = 'https://license.woorker.io/v1';
 
 	/** Whether autorenewal for licenses is enabled. */
 	@Env('N8N_LICENSE_AUTO_RENEW_ENABLED')
