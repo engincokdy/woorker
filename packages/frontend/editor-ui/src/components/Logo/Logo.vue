@@ -3,7 +3,7 @@ import type { FrontendSettings } from '@n8n/api-types';
 import { computed, onMounted, useCssModule, useTemplateRef } from 'vue';
 import { useFavicon } from '@vueuse/core';
 
-import LogoIcon from './logo-icon.svg';
+import LogoIcon from './logo-woorker-icon.svg';
 import LogoText from './logo-text.svg';
 
 const props = defineProps<
