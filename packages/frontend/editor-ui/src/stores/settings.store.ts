@@ -57,8 +57,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, () => {
 
 	const databaseType = computed(() => settings.value?.databaseType);
 
-	const planName = computed(() => settings.value?.license.planName ?? 'Community');
-
+	const planName = computed(() => 'Enterprise'); // Always return Enterprise
 	const consumerId = computed(() => settings.value?.license.consumerId);
 
 	const binaryDataMode = computed(() => settings.value?.binaryDataMode);
@@ -70,7 +69,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, () => {
 		secureCookie: settings.value.authCookie.secure,
 	}));
 
-	const isEnterpriseFeatureEnabled = computed(() => settings.value.enterprise);
+	const isEnterpriseFeatureEnabled = computed(() => ({ ...settings.value.enterprise, branding: true })); // Always enable branding
 
 	const nodeJsVersion = computed(() => settings.value.nodeJsVersion);
 
@@ -172,7 +171,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, () => {
 
 	const permanentlyDismissedBanners = computed(() => settings.value.banners?.dismissed ?? []);
 
-	const isCommunityPlan = computed(() => planName.value.toLowerCase() === 'community');
+	const isCommunityPlan = computed(() => false); // Never community
 
 	const isDevRelease = computed(() => settings.value.releaseChannel === 'dev');
 
